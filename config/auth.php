@@ -44,6 +44,17 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+
+
+        // using multi auth with multi guard
+        'api-merchant' => [
+            'driver' => 'passport',
+            'provider' => 'merchants',
+        ],
+        'api-customer' => [
+            'driver' => 'passport',
+            'provider' => 'customers',
+        ],
     ],
 
     /*
@@ -67,6 +78,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+
+        
+        'merchants' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Merchant::class),
+        ],
+
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Customer::class),
         ],
 
         // 'users' => [
